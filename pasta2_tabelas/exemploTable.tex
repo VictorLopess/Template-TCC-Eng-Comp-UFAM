@@ -1,0 +1,15 @@
+\begin{table}[H]
+\begin{spacing}{1.5}
+\centering
+\caption{Informações sobre os AUKFs}
+\label{tab:descricao_aukf}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{\textbf{Filtro}} & \multicolumn{4}{c|}{\textbf{Esquações do Modelo}} & \multirow{2}{*}{\textbf{Vetor de Falhas Estimadas}} \\ \cline{2-5}
+      & $p(x)$ e $B$ & $g(x)$ e $D$ & $F_{x}$ & $F_{y}$ &                            \\ \hline
+AUKF1 & \eqref{tts:eq40} & \eqref{tts:eq41} & \eqref{tts:eq45} & \eqref{tts:eq46} & $[\hat{f}_{1} , \hat{f}_{2}]^T$ \\ \hline
+AUKF2 & \eqref{tts:eq40} & \eqref{tts:eq41} & \eqref{tts:eq49} & \eqref{tts:eq50} & $[\hat{f}_{3},\hat{f}_{4},\hat{f}_{5},\hat{f}_{6},\hat{f}_{7},\hat{f}_{8},\hat{f}_{9}]^T$ \\ \hline
+AUKF3 & \eqref{tts:eq40} & \eqref{tts:eq41} & \eqref{tts:eq52} & \eqref{tts:eq53} &  $[\hat{f}_{10},\hat{f}_{11},\hat{f}_{12},\hat{f}_{13},\hat{f}_{14},\hat{f}_{15},\hat{f}_{16},\hat{f}_{17}]^T$ \\ \hline
+\end{tabular}
+\end{spacing}
+\end{table}

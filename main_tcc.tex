@@ -1,0 +1,167 @@
+% +------- CÓDIGO FONTE TCC -------+
+% 	Autor: Arllem Farias, 2017.
+% 	E-mail: arllemfarias@ufam.edu.br
+%   Revisor: João Victor Lima Lopes
+%   E-mail: jvllopess@gmail.com
+% +--------------------------------+
+
+% Ítens como: Ficha Catalográfica, Folha de Aprovação Assinada e Lombada, devem ser adicionadas posteriormente
+% e descomentar as linhas que as adicionam (Linhas 132,134 e 135).
+
+% Classe do documento --> \documentclass[OPÇÕES]{CLASSE}
+\documentclass[
+			   a4paper, % Tipo de papel 
+			   oneside, % Impressão em apenas um lado da folha
+			   12pt     % Tamanho da fonte
+			   ]{book}  % Classe do documento
+
+% Pacotes --> \usepackage[OPÇÕES]{PACOTE}
+\usepackage[utf8]{inputenc} % Codificação do documento (conversão automática dos acentos) 
+\usepackage[brazil]{babel}  % Traduz palavras chaves para o PT-BR (ex.: abstract->resumo)
+\usepackage{indentfirst}    % Indenta o primeiro parágrafo de cada seção
+\usepackage{setspace}		% Possibilita a alteração do espaçamento entre linhas
+\usepackage{graphicx}       % Possibilita a inserção de figuras
+\usepackage{subcaption}     % Possibilita a inserção de subfiguras
+\usepackage{pdfpages}       % Possibilita a inserção de páginas em pdf
+\usepackage{amsmath}        % Inclui funções adicionais no ambiente matemático \eqref{•} \dfrac{•}{•}
+\usepackage{amssymb} 		% Símbolos adicionais no documento \mathbb{R}
+\usepackage{mathrsfs}       % Símbolos da transformadas de Laplace e Fourier \mathscr{•}
+\usepackage{float}			% Possibila posicionar tabelas e figuras em uma posição específica [H]
+\usepackage[numbers]{natbib}% Inclui mais possibilidades de citações \citep{•}
+\usepackage{fancyhdr}       % Possibilita a alteração de cabeçalho e rodapé
+\usepackage{longtable}      % Possiblita a quebra de tableas em duas páginas
+\usepackage{multirow}		% Possibilita multiplas linhas em tabelas
+\usepackage{array}			% Possibilita o uso do comando \newcolumntype{•}[•]
+\usepackage{pdflscape}      % Possibilita a inserção de páginas em modo paisagem
+\usepackage{listings}		% Possibilita inserir códigos fontes (C++, Java, ...)
+\usepackage{slashbox}       % Adiciona o comando \backslashbox{•}{•} usado em tabelas
+\usepackage{arydshln}       % Possibilita inserir linhas pontilhadas em tabelas 
+
+%\usepackage[inline]{showlabels} % Mostra os labels das equações
+%\usepackage[notcite,notref]{showkeys} % Mostra todo os labels
+%\usepackage{lipsum} % preenchimento automático de textos
+
+% Modifica os itens do sumário
+\usepackage[nottoc,
+			notlof,
+			notlot]{tocbibind}
+
+% Configura as margens das páginas
+\usepackage[top    = 3cm,
+			bottom = 2cm,
+			left   = 3cm,
+			right  = 2cm]{geometry}
+
+% Possibilita hiperlinks no texto
+\usepackage[pdftex,
+			%backref,
+			linktocpage = false,
+			colorlinks  = true,
+			linkcolor   = blue,
+			anchorcolor = blue,
+			citecolor   = blue,
+			urlcolor    = blue]{hyperref}
+
+% Comandos auxiliares --> \nomecomando{COMANDO}{•}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}} % Tabelas: {|C{2cm}|C{5cm}|}
+\newcolumntype{L}[1]{>{\let\newline\\\arraybackslash\hspace{0pt}}m{#1}} % Tabelas: {|L{2cm}|L{5cm}|}
+\newcommand*{\doi}[1]{DOI: \href{http://dx.doi.org/#1}{#1}} % Usado nas referencias
+
+\setcounter{secnumdepth}{3} % Inclui a numeração de \subsubsection{•} no documento
+\setcounter{tocdepth}{3}    % Inclui a \subsubsection{•} no sumário
+\setstretch{1.5}			% Configura o espaçamento entre linhas \usepackage{setspace}
+
+\pagestyle{fancy} 			% Configura a página para incluir o cabeçalho e rodapé
+\lhead{{\footnotesize\leftmark}} % Cabeçalho esquerdo
+\chead{}				         % Cabeçalho central
+\rhead{\thepage}				 % Cabeçalho direito
+\fancyfoot{}					 % Rodapé vazio
+
+% Definição de novas cores
+\definecolor{mygreen}{RGB}{0, 115, 0}
+\definecolor{mylilas}{RGB}{170,55,240}
+
+\lstset{ % -> \usepackage{listings}
+  language=Matlab,
+  basicstyle=\ttfamily\small, 
+  morekeywords={matlab2tikz},
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{mylilas}, 
+  commentstyle=\color{mygreen}, 
+  extendedchars=true,
+  showspaces=false,
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true,
+  breakautoindent=true,
+  captionpos=b,
+  xrightmargin=0pt,
+  xleftmargin=15pt,
+}
+
+
+% Novos comandos --> \newcommand{COMANDO}{DEFINIÇÃO}
+\newcommand{\instituicao}{
+				UNIVERSIDADE FEDERAL DO AMAZONAS\\
+				FACULDADE DE TECNOLOGIA\\
+				ENGENHARIA DA COMPUTAÇÃO}
+\newcommand{\titulo}{
+				TÍTULO AQUI}
+\newcommand{\apresentacao}{
+				Monografia apresentada à Coordenação do Curso
+				de Engenharia da Computação da Universidade Federal
+				do Amazonas, como parte dos requisitos necessários
+				à obtenção do título de Engenheiro de Computação.}
+\newcommand{\autor}{
+				AUTOR AQUI}
+\newcommand{\local}{
+				MANAUS-AM\\ANO}
+\newcommand{\orientador}{
+				ORIENTADOR AQUI}
+
+%-----------------------------------------------------
+%\usepackage{ulem}
+%\newcommand{\commentib}[1]{{\color{red} [IB: #1]}}
+%\newcommand{\corrigir}[1]{{\color{violet}\uwave{#1}}}
+%-----------------------------------------------------
+
+\begin{document}
+
+\include{parte1_pre-textuais/item01_capa}
+%\include{parte1_pre-textuais/item02_lombada}
+\include{parte1_pre-textuais/item03_folha_de_rosto}
+%\include{parte1_pre-textuais/item04_ficha_catalografica}
+%\include{parte1_pre-textuais/item05_folha_de_aprovacao_assinada}
+\include{parte1_pre-textuais/item06_dedicatoria}
+\include{parte1_pre-textuais/item07_agradecimentos}
+\include{parte1_pre-textuais/item08_epigrafe}
+\include{parte1_pre-textuais/item09_resumo}
+\include{parte1_pre-textuais/item10_abstract}
+\include{parte1_pre-textuais/item11_lista_de_figuras}
+\include{parte1_pre-textuais/item12_lista_de_tabelas}
+\include{parte1_pre-textuais/item13_lista_de_siglas}
+\include{parte1_pre-textuais/item14_lista_de_simbolos}
+\include{parte1_pre-textuais/item15_sumario}
+
+\include{parte2_textuais/cap1_introducao}
+\include{parte2_textuais/cap2_fundamentacao}
+\include{parte2_textuais/cap3_modelagem}
+\include{parte2_textuais/cap4_metodologia}
+\include{parte2_textuais/cap5_resultados}
+\include{parte2_textuais/cap6_conclusao}
+
+% FOI RENOMEADO O ARQUIVO: main_tcc.bbl para main_tcc.bbl_OLD
+\bibliographystyle{IEEEtranN} % Ordem de citação
+%\bibliographystyle{humannat} % Ordem alfabética
+%\bibliographystyle{dinat}    % Ordem alfabética
+%\bibliographystyle{plainnat} % Ordem alfabética
+%\bibliographystyle{apa}      % Ordem alfabética
+
+\bibliography{referencias}
+
+\appendix
+
+\include{parte3_pos-textuais/apendice_a_simulador}
+
+\end{document}
