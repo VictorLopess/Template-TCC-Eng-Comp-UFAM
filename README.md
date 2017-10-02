@@ -5,7 +5,7 @@ Template em Latex para alunos de Engenharia da Computação da UFAM. Pode també
 
 ## Dicas
 
-* Existem vários editores de Latex. Após utilizar alguns[TexMaker](http://www.xm1math.net/texmaker/) e [TexStudio](http://www.texstudio.org/) , vimos que o mais estável é o [TexStudio](http://www.texstudio.org/). Quando forem desenvolver seus trabalhos, procurem optar por este editor.
+* Existem vários editores de Latex. Após utilizar alguns ([TexMaker](http://www.xm1math.net/texmaker/) e [TexStudio](http://www.texstudio.org/)), vimos que o mais estável é o [TexStudio](http://www.texstudio.org/). Quando forem desenvolver seus trabalhos, procurem optar por este editor.
 
 * Dê preferência também para o Sistema Operacional Linux, como o [Mint](https://www.linuxmint.com/). Isso facilita a instalação dos editores e também das bibliotecas.
 
